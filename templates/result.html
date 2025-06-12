@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      max-width: 700px;
+      width: 90%;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .result-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .result-card {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+
+    .preview-image {
+      width: 256px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .result-info {
+      text-align: center;
+    }
+
+    .label {
+      font-size: 18px;
+      font-weight: 500;
+      color: #6c757d;
+      margin-bottom: 5px;
+    }
+
+    .result-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .try-again-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .try-again-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Eye Disease Prediction Result</h1>
+
+    <div class="result-card">
+      <img src="{{ image_url }}" alt="Uploaded Eye Image" class="preview-image">
+      <div class="result-info">
+        <p class="label">Predicted Disease:</p>
+        <p class="result-text">{{ result }}</p>
+      </div>
+    </div>
+
+    <a href="/" class="try-again-btn">Try Another Image</a>
+  </div>
+</body>
+</html>
